@@ -29,10 +29,13 @@ namespace Caffeine
 			};
 			trayMenu = new ContextMenu(menu);
 
-			trayIcon.ContextMenu = trayMenu;
 			toggleMenuItem.DefaultItem = true;
-			Enabled = false;
+
+			trayIcon.ContextMenu = trayMenu;
 			trayIcon.DoubleClick += (o, args) => toggleMenuItem.PerformClick();
+			trayIcon.Text = "Caffeine";
+
+			Enabled = false;
 
 			Application.ApplicationExit += (o, args) =>
 			{
